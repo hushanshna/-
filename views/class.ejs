@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>学生管理</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/bootstrap-validator/css/bootstrapValidator.min.css"/>
+    <link rel="stylesheet" href="assets/bootstrap/js/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/nprogress/nprogress.css"/>
+    <link rel="stylesheet" href="assets/admin.css"/>
+    <style>
+        .in1{margin: 0 auto; background: blue;color: black;}
+    </style>
+</head>
+<body>
+<!--侧边栏-->
+<aside class="ad_aside">
+    <!--商标-->
+    <div class="brand"><a href="index.html">高校大创</a></div>
+    <!--用户-->
+    <div class="user">
+        <img src="/assets/images/default.png" alt=""/>
+        <span>超级管理员</span>
+    </div>
+    <div class="menu">
+        <ul>
+            <li class="now"><a href="/sM"><span class="glyphicon glyphicon-user"></span> 学生管理</a></li>
+            <li>
+                <a href="/tM"><span class="glyphicon glyphicon-user"></span> 老师管理</a>
+            </li>
+            <li>
+                <a href="/xM"><span class="glyphicon glyphicon-user"></span> 校级管理</a>
+            </li>
+            <li>
+                <a href="/zM"><span class="glyphicon glyphicon-user"></span> 专家管理</a>
+            </li>
+        </ul>
+    </div>
+</aside>    
+<section class="ad_section">
+    <!--顶部导航-->
+    <nav class="ad_nav">
+        <a data-menu href="javascript:;"><span class="glyphicon glyphicon-align-justify"></span></a>
+        <a data-logout href="javascript:;"><span class="glyphicon glyphicon-log-out"></span></a>
+    </nav>
+    <div class="container-fluid">
+        <!--路径导航-->
+        <ol class="breadcrumb">
+            <li><a href="#">管理系统</a></li>
+            <li class="active">添加信息</li>
+        </ol>
+    <div>
+    <form action="http://localhost:3000/class/submit" method="post"> 
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">序号:</label>
+            <input type="text" name="id" class="form-control" id="web-name" value="">
+          </div>
+          
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">专家打分:</label>
+            <input type="text"  name="zclass" class="form-control" id="web-url" value="">
+          </div>
+          
+          
+          
+          <input class="btn btn-primary mx-auto" type="submit" value="提交">
+        </form>    
+</section> 
+
+    <script src="assets/bootstrap/js/jquery.js"></script>
+     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+     <script src="assets/bootstrap/js/bootstrap.js"></script>
+
+</body>
+</html>

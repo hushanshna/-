@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>后台管理系统-专家管理</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/bootstrap-validator/css/bootstrapValidator.min.css"/>
+    <link rel="stylesheet" href="assets/bootstrap/js/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/nprogress/nprogress.css"/>
+    <link rel="stylesheet" href="assets/admin.css"/>
+    <style>
+        .fileupload{
+            position: relative;
+        }
+        .fileupload [type="file"]{
+            width: 82px;
+            height: 34px;
+            position: absolute;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<!--侧边栏-->
+<aside class="ad_aside">
+    <!--商标-->
+    <div class="brand"><a href="index.html">高校大创</a></div>
+    <!--用户-->
+    <div class="user">
+        <img src="assets/images/default.png" alt=""/>
+        <span>超级管理员</span>
+    </div>
+    <!--菜单-->
+    <div class="menu">
+        <ul>
+            <li><a href="/sM"><span class="glyphicon glyphicon-user"></span> 学生管理</a></li>
+            
+            <li>
+                <a href="/tM"><span class="glyphicon glyphicon-user"></span> 老师管理</a>
+            </li>
+            <li><a href="/xM"><span class="glyphicon glyphicon-user"></span> 校级管理</a></li>
+            <li>
+            <li class="now">
+                <a href="/zM"><span class="glyphicon glyphicon-user"></span> 专家管理</a>
+            </li>
+        </ul>
+    </div>
+</aside>
+<!--内容-->
+<section class="ad_section">
+    <!--顶部导航-->
+    <nav class="ad_nav">
+        <a data-menu href="javascript:;"><span class="glyphicon glyphicon-align-justify"></span></a>
+        <a data-logout href="/login"><span class="glyphicon glyphicon-log-out"></span></a>
+    </nav>
+    <div class="container-fluid">
+        <!--路径导航-->
+        <ol class="breadcrumb">
+            <li><a href="#">管理系统</a></li>
+            <li class="active">专家管理</li>
+        </ol>
+        <div class="ad_content">
+           
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th width="15%">序号</th>
+                    <th width="25%">项目名称</th>
+                    <th width="20%">负责人</th>
+                    <th width="20%">项目详情</th>
+                    <th width="20%">专家打分</th>
+                    <th>操作</th>
+                    
+                </tr>
+                </thead>
+                <tbody class="text-center" style="line-height: 40px;">
+                   <%for(var i=0;i<speclia.length;i++){%> 
+                    <tr>
+                        <td><%=speclia[i].id%></td>
+                        <td><%=speclia[i].proname%></td>
+                        <td><%=speclia[i].fzname%></td>
+                        <td><%=speclia[i].detail%></td>
+                        <td><%=speclia[i].zclass%></td>
+                        <td><a href="/class?id=<%=speclia[i].id%>" class="btn btn-primary" >打分</a></td>
+                    </tr>
+                   <%}%> 
+                </tbody>
+            </table>
+            <div class="page">
+                <ul class="pagination"></ul>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">请填写信息</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form  action="http://localhost:3000/zM/submit" method="post">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">序号:</label>
+            <input type="text" class="form-control" id="user-name">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">项目名称:</label>
+            <input type="text" class="form-control" id="web-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">负责人:</label>
+            <input type="text" class="form-control" id="web-url">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">项目详情:</label>
+            <input type="text" class="form-control" id="web-url">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">专家打分:</label>
+            <input type="text" class="form-control" id="web-url">
+          </div>
+           <input class="btn btn-primary mx-auto" type="submit" value="提交">
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+        </div>
+     <script src="assets/bootstrap/js/jquery.js"></script>
+     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+     <script src="assets/bootstrap/js/bootstrap.js"></script>
+
+
+</body>
+</html>
